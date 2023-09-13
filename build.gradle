@@ -1,0 +1,72 @@
+plugins {
+    id 'maven-publish'
+    id "java"
+    id "org.springframework.boot" version "${springBootVersion}"
+    id "io.spring.dependency-management" version "${springDependencyManagementPluginVersion}"
+}
+
+sourceCompatibility = "${javaVersion}"
+group = "${projectGroup}"
+version = "${projectVersion}"
+
+publishing {
+
+    publications {
+        library(MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url = "http://git.promcars.ru/api/v4/projects/145/packages/maven"
+            allowInsecureProtocol = true
+            name = "GitLab"
+            credentials(HttpHeaderCredentials) {
+                name = "Deploy-Token"
+                value = gitLabDeployToken
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+    }
+
+}
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+ext.set("springCloudVersion", "${springCloudVersion}")
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+dependencies {
+
+    // SPRING CORE
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor "org.springframework.boot:spring-boot-autoconfigure-processor"
+
+    // SPRING CLOUD
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+
+    // LOMBOK
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+}
+
+bootJar.enabled = false
+jar.enabled = true
+
