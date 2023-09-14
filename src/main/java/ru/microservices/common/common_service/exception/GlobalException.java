@@ -1,7 +1,7 @@
-package ru.microservices.common_service.exception;
+package ru.microservices.common.common_service.exception;
 
 import lombok.Getter;
-import ru.microservices.common_service.util.ParseUtil;
+import ru.microservices.common.common_service.util.ParseUtil;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

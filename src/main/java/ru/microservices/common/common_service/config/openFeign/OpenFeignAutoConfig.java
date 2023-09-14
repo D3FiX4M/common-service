@@ -1,11 +1,11 @@
-package ru.microservices.common_service.config.openFeign;
+package ru.microservices.common.common_service.config.openFeign;
 
 import feign.Retryer;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ru.microservices.common_service.config.openFeign.retry.RetryerConfig;
-import ru.microservices.common_service.config.openFeign.retry.RetryerProperty;
+import ru.microservices.common.common_service.config.openFeign.retry.RetryerConfig;
+import ru.microservices.common.common_service.config.openFeign.retry.RetryerProperty;
 
 @Configuration
 public class OpenFeignAutoConfig {

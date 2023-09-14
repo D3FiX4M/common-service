@@ -1,4 +1,4 @@
-package ru.microservices.common_service.util;
+package ru.microservices.common.common_service.util;
 
 import lombok.experimental.UtilityClass;
 

@@ -1,10 +1,10 @@
-package ru.microservices.common_service.util;
+package ru.microservices.common.common_service.util;
 
 
 import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 import org.springframework.data.repository.NoRepositoryBean;
-import ru.microservices.common_service.exception.GlobalError;
-import ru.microservices.common_service.exception.GlobalException;
+import ru.microservices.common.common_service.exception.GlobalError;
+import ru.microservices.common.common_service.exception.GlobalException;
 
 import java.util.ArrayList;
 import java.util.Collection;

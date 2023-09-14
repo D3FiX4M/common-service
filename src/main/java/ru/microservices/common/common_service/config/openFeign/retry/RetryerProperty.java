@@ -1,4 +1,4 @@
-package ru.microservices.common_service.config.openFeign.retry;
+package ru.microservices.common.common_service.config.openFeign.retry;
 
 import lombok.Getter;
 import lombok.Setter;

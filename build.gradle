@@ -9,29 +9,28 @@ sourceCompatibility = "${javaVersion}"
 group = "${projectGroup}"
 version = "${projectVersion}"
 
+
 publishing {
 
     publications {
         library(MavenPublication) {
-            artifact jar
+            artifact bootJar
         }
     }
     repositories {
-        maven {
-            url = "http://git.promcars.ru/api/v4/projects/145/packages/maven"
-            allowInsecureProtocol = true
-            name = "GitLab"
-            credentials(HttpHeaderCredentials) {
-                name = "Deploy-Token"
-                value = gitLabDeployToken
-            }
-            authentication {
-                header(HttpHeaderAuthentication)
-            }
-        }
+//        maven {
+//            url = "http://git.promcars.ru/api/v4/projects/145/packages/maven"
+//            allowInsecureProtocol = true
+//            credentials {
+//                username = "Deploy-Token"
+//                password = gitLabDeployToken
+//            }
+//        }
+        mavenLocal()
     }
 
 }
+
 
 repositories {
     mavenCentral()
@@ -66,7 +65,3 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 }
-
-bootJar.enabled = false
-jar.enabled = true
-

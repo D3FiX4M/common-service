@@ -1,4 +1,4 @@
-package ru.microservices.common_service.util;
+package ru.microservices.common.common_service.util;
 
 public interface DatePatterns {
 	String DATE_TIME = "yyyy-MM-dd HH:mm:ss";

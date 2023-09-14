@@ -1,4 +1,4 @@
-package ru.microservices.common_service.exception;
+package ru.microservices.common.common_service.exception;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
