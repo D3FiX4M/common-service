@@ -16,7 +16,10 @@ public enum GlobalError {
     BAD_REQUEST_ERROR(HttpStatus.BAD_REQUEST),
     NOT_ALLOWED_ERROR(HttpStatus.METHOD_NOT_ALLOWED),
     BAD_CREDENTIALS(HttpStatus.FORBIDDEN),
-    ACCESS_ERROR(HttpStatus.FORBIDDEN);
+    ACCESS_ERROR(HttpStatus.FORBIDDEN),
+    TOKEN_EXPIRE_ERROR(HttpStatus.BAD_REQUEST),
+    TOKEN_EXTRACT_CLAIM_ERROR(HttpStatus.BAD_REQUEST),
+    INVALID_TOKEN_ERROR(HttpStatus.BAD_REQUEST);
 
     private final HttpStatus status;
 }
