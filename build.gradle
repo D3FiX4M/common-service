@@ -9,29 +9,6 @@ sourceCompatibility = "${javaVersion}"
 group = "${projectGroup}"
 version = "${projectVersion}"
 
-
-publishing {
-
-    publications {
-        library(MavenPublication) {
-            artifact bootJar
-        }
-    }
-    repositories {
-//        maven {
-//            url = "http://git.promcars.ru/api/v4/projects/145/packages/maven"
-//            allowInsecureProtocol = true
-//            credentials {
-//                username = "Deploy-Token"
-//                password = gitLabDeployToken
-//            }
-//        }
-        mavenLocal()
-    }
-
-}
-
-
 repositories {
     mavenCentral()
 }
