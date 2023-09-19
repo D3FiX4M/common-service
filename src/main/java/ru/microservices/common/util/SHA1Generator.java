@@ -1,8 +1,8 @@
-package ru.microservices.common.common_service.util;
+package ru.microservices.common.util;
 
 import lombok.experimental.UtilityClass;
-import ru.microservices.common.common_service.exception.GlobalError;
-import ru.microservices.common.common_service.exception.GlobalException;
+import ru.microservices.common.exception.GlobalError;
+import ru.microservices.common.exception.GlobalException;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

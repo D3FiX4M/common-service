@@ -1,4 +1,4 @@
-package ru.microservices.common.common_service.util;
+package ru.microservices.common.util;
 
 public class FunctionalInterfaces {
 	@FunctionalInterface
